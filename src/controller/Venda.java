@@ -28,14 +28,25 @@ public class Venda extends Thread{
 	private void login() {
 		int tempo = (int) ((Math.random()*1951)+50);
 		if (tempo > 1000) {
-			System.out.println(getId()+" timeout: tempo esgotado. Você não poderá efetuar a compra");
+			try {
+				sleep(tempo);
+				System.out.println(getId()+" timeout: tempo esgotado. Você não poderá efetuar a compra");
+			} catch (InterruptedException e) {
+				e.printStackTrace();
+			}
 		}
 	}
 
 	private void compra() {
 		int tempo = (int) ((Math.random()*2001)+1000);
 		if (tempo > 2500) {
-			System.out.println(getId()+" timeout: tempo esgotado. Você não poderá efetuar a compra");
+			try {
+				sleep(tempo);
+				System.out.println(getId()+" timeout: tempo esgotado. Você não poderá efetuar a compra");
+			} catch (InterruptedException e) {
+				e.printStackTrace();
+			}
+			
 		}
 	}
 
